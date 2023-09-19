@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+</head>
+<body>
+<table>
+    <form action="/hospitalapp/editprofileuserP/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+       <input type="hidden" id="id" value="{{ data.id }}" name="id"><br>
+
+<tr>
+    <td>Photo :</td>
+    <td>
+    <td><input type="file" name="img">
+    <img src="{{ data.photo }}"> </td>
+</tr>
+<tr>
+    <td>Name :</td>
+    <td><input type="text" value="{{ data.name }}"name="a1" > </td>
+</tr>
+<tr>
+    <td> Age :</td>
+    <td><input type="text" value=" {{ data.age }}" name="a2"></td>
+</tr>
+<tr>
+    <td>Email :</td>
+    <td><input type="text" value="{{ data.Email }}" name="a3"></td>
+</tr>
+<tr>
+    <td> Gender:</td>
+    <td><input type="text" value="{{ data.gender }}"name="a4" ></td>
+</tr>
+<tr>
+    <td> Place:</td>
+    <td><input type="text" value="{{ data.place }}"name="a5"></td>
+</tr>
+<tr>
+    <td>post:</td>
+    <td><input type="text" value="{{ data.post }}"name="a6"></td>
+</tr>
+<tr>
+    <td>pin:</td>
+    <td> <input type="text" value=" {{ data.pin }}"name="a7"></td>
+</tr>
+<tr>
+    <td>district :</td>
+    <td><input type="text" value=" {{ data.district }}"name="a8"></td>
+</tr>
+      <tr>
+          <td><input type="submit"></td>
+      </tr>
+    </form>
+</table>
+</body>
+</html>

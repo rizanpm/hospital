@@ -1,0 +1,34 @@
+{% extends 'Admin/adminindex.html' %}
+{% block body %}
+<table border="2" class="table table-bordered table-light">
+    <tr>
+        <td>name</td>
+        <td>age</td>
+        <td>email</td>
+        <td>photo</td>
+        <td>gender</td>
+        <td>place</td>
+        <td>post</td>
+        <td>pin</td>
+        <td>district</td>
+
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ i.name }}</td>
+        <td>{{ i.age }}</td>
+        <td>{{ i.Email }}</td>
+        <td><img src="{{ i.photo }}"></td>
+        <td>{{ i.gender }}</td>
+        <td>{{ i.place }}</td>
+        <td>{{ i.post }}</td>
+        <td>{{ i.pin }}</td>
+        <td>{{ i.district }}</td>
+
+{#        <td> <a href="/hospitalapp/editprofileuser/">edit</a></td>#}
+{#        <td><a href="">delete</a></td>#}
+    </tr>
+    {% endfor %}
+
+</table>
+{% endblock %}

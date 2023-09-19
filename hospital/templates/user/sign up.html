@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+</head>
+<body>
+    <h1>Sign Up</h1>
+    <form method="post" action="/hospitalapp/signupP/" enctype="multipart/form-data">
+     {% csrf_token %}
+        <table>
+            <tr>
+                <td> <label for="username">Name:</label></td>
+                <td> <input type="text" id="name" name="name" required></td>
+            </tr>
+
+            <tr>
+                <td>  <label for="Age">Age:</label></td>
+                <td><input type="text" id="age" name="age" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="Email">Email:</label></td>
+                <td><input type="text" id="email" name="email" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="Photo">Photo:</label></td>
+                <td><input type="file" id="photo" name="photo" required></td>
+            </tr>
+
+            <tr>
+             <td>Gender</td>
+                <td><input type="radio" name="gender" value="male">male
+                <input type="radio" name="gender" value="female">female</td>
+            </tr>
+
+            <tr>
+                <td><label for="Place">Place:</label></td>
+                <td><input type="text" id="place" name="place" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="Post">Post:</label></td>
+                <td><input type="text" id="post" name="post" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="Pin">Pin:</label></td>
+                <td><input type="text" id="pin" name="pin" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="District">District:</label></td>
+                <td><input type="text" id="district" name="district" required></td>
+            </tr>
+
+            <tr>
+                <td><input type="submit" value="Sign Up"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

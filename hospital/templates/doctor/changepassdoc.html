@@ -1,0 +1,25 @@
+{% extends 'doctor/doctorindex.html' %}
+{% block body %}
+
+<form method="post" action="/hospitalapp/changepassdocP/" enctype="multipart/form-data.">
+     {% csrf_token %}
+<h1>Change Password</h1>
+<table border="2" class="table table-light">
+    <tr>
+        <td>old password</td>
+        <td><input type="text" name="d1"></td>
+    </tr>
+    <tr>
+        <td> new password</td>
+        <td><input type="text" name="d2"></td>
+    </tr>
+    <tr>
+        <td>confirm new password</td>
+        <td><input type="text" name="d3"></td>
+    </tr>
+    <tr>
+        <td align="center"><input type="submit"></td>
+    </tr>
+</table>
+</form>
+{% endblock %}

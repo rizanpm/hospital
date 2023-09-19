@@ -1,0 +1,39 @@
+{% extends 'Admin/adminindex.html' %}
+{% block body %}
+<h2>View doctors</h2>
+<table border="1" class="table table-bordered table-light" >
+    <tr>
+        <td>sl/no</td>
+        <td>name</td>
+        <td>gender</td>
+        <td>place</td>
+        <td>post</td>
+        <td>pin</td>
+        <td>district</td>
+        <td>state</td>
+        <td>department</td>
+        <td>qualification</td>
+        <td>photo</td>
+        <td>   </td>
+        <td></td>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ i.name }}</td>
+        <td>{{ i.gender }}</td>
+        <td>{{ i.place }}</td>
+        <td>{{ i.post }}</td>
+        <td>{{ i.pin }}</td>
+        <td>{{ i.district }}</td>
+        <td>{{ i.state }}</td>
+        <td>{{ i.DEPARTMENT.name }}</td>
+        <td>{{ i.qualification }}</td>
+        <td> <img src="{{ i.photo }}" width="50px" height="50px"></td>
+        <td><a href="/hospitalapp/editdoctor/{{ i.id }}#services"  class="btn btn-success" >edit</a> </td>
+        <td><a href="/hospitalapp/deletedoctor/{{ i.id }}" onclick="return confirm('Are You Sure..');" class="btn btn-danger" >Delete</a> </td>
+
+    </tr>
+     {% endfor %}
+</table>
+{% endblock %}

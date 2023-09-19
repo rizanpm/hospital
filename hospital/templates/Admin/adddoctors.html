@@ -1,0 +1,58 @@
+{% extends 'Admin/adminindex.html' %}
+{% block body %}
+
+<form action="/hospitalapp/adddocpost/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+<h2>ADD DOCTORS</h2>
+<table border="2" class="table table-light">
+    <tr>
+        <td>Name</td>
+        <td><input type="text" name="a1" > </td>
+    </tr>
+    <tr>
+        <td>Gender</td>
+        <td><input type="radio" name="gender" value="male">male
+            <input type="radio" name="gender" value="female">female</td>
+    </tr>
+     <tr>
+        <td>Place</td>
+        <td><input type="text" name="a2"></td>
+    </tr>
+     <tr>
+        <td>Post</td>
+        <td><input type="text" name="a3"></td>
+    </tr>
+     <tr>
+        <td>Pin</td>
+        <td><input type="text" name="a4"></td>
+    </tr>
+     <tr>
+        <td>District</td>
+        <td><input type="text" name="a5"></td>
+    </tr>
+     <tr>
+        <td>State</td>
+        <td><input type="text" name="a6"></td>
+    </tr>
+     <tr>
+        <td>Department</td>
+        <td><select name="dropdown">
+            {% for i in data %}
+            <option value="{{ i.id }}">{{ i.name }}</option>
+            {% endfor %}
+        </select></td>
+    </tr>
+     <tr>
+        <td>Qualification</td>
+        <td><input type="text" name="a8"></td>
+    </tr>
+     <tr>
+        <td>Photo</td>
+        <td><input type="file" name="pic"></td>
+    </tr>
+    <tr>
+        <td><input type="submit"></td>
+    </tr>
+</table>
+</form>
+{% endblock %}

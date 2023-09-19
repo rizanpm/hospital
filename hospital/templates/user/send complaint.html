@@ -1,0 +1,11 @@
+{% extends 'user/userindex.html' %}
+{% block body %}
+
+<body>
+<form method="post" action="/hospitalapp/sendcomplaintP/" enctype="multipart/form-data.">
+     {% csrf_token %}
+<h2>Send Complaint</h2>
+<input type="textarea" name="complaint">
+<input type="submit">
+</form>
+{% endblock %}

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form method="post" action="/hospitalapp/editdepP/" enctype="multipart/form-data.">
+     {% csrf_token %}
+<input type="hidden" value="{{ data.id }}" name="id">
+<input type="text" name="text" value="{{ data.name }}" PLACEHOLDER="enter department">
+<input type="submit" name="button">
+</form>
+</body>
+</html>

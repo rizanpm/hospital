@@ -1,0 +1,22 @@
+{% extends 'Admin/adminindex.html' %}
+{% block body %}
+
+
+
+<form action="/hospitalapp/adddeppost/" method="post"  enctype="multipart/form-data">
+     {% csrf_token %}
+
+<h2>Add Department</h2>
+    <table>
+<tr>
+    <td><input type="text" name="text" class="form-control" PLACEHOLDER="enter department"></td>
+</tr>
+        <tr>
+            <td><input type="submit" class="btn btn-success" name="button">
+</td>
+        </tr>
+
+
+            </table>
+</form>
+{% endblock %}

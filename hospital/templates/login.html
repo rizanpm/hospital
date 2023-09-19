@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form method="post" action="/hospitalapp/loginp/">
+    {% csrf_token %}
+<h1>LOGIN PAGE</h1>
+<input type="text" name="email" placeholder="username"><br>
+<input type="text" name="password" placeholder="password"><br>
+<input type="submit" name="button">
+    <a href="/hospitalapp/signup/">signup</a>
+</form>
+</body>
+</html>

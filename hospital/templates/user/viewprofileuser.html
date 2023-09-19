@@ -1,0 +1,50 @@
+{% extends 'user/userindex.html' %}
+{% block body %}
+
+<h1>Profile</h1>
+<table border="1" class="table table-light">
+
+    <tr>
+        <td><img src="{{ data.photo }}"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>name</td>
+        <td>{{ data.name }}</td>
+    </tr>
+    <tr>
+        <td>age</td>
+        <td>{{ data.age }}</td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td>{{ data.Email }}</td>
+    </tr>
+    <tr>
+        <td>gender</td>
+        <td>{{ data.gender }}</td>
+    </tr>
+    <tr>
+        <td>place</td>
+        <td>{{ data.place }}</td>
+    </tr>
+    <tr>
+        <td>post</td>
+        <td>{{ data.post }}</td>
+    </tr>
+    <tr>
+        <td>pin</td>
+        <td>{{ data.pin }}</td>
+    </tr>
+    <tr>
+        <td>district</td>
+        <td>{{ data.district }}</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="/hospitalapp/editprofileuser/{{ data.id }}">edit</a>
+        </td>
+    </tr>
+</table>
+{% endblock %}
+

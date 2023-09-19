@@ -1,0 +1,24 @@
+{% extends 'Admin/adminindex.html' %}
+{% block body %}
+    <h2>view complaints</h2>
+<table border="1" class=" table table-light">
+    <tr>
+        <td>sl/no</td>
+        <td>date</td>
+        <td>patient</td>
+        <td>Complaint</td>
+        <td>status</td>
+        <td> </td>
+    </tr>
+     {% for i in data %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ i.date }}</td>
+        <td>{{ i.PATIENT.name }}</td>
+        <td>{{ i.complaint }}</td>
+        <td>{{ i.status }}</td>
+        <td><a href ="/hospitalapp/sendreply/{{ i.id }}"><input type="button" value="reply"></a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

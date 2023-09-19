@@ -1,0 +1,62 @@
+{% extends 'Admin/adminindex.html' %}
+{% block body %}
+    <form action="/hospitalapp/editdoctorP/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+      <input type="hidden" id="id" value="{{ data.id }}" name="id"><br>
+
+<h2>EDIT DOCTORS</h2>
+<table border="1" class="table table-bordered table-light">
+<tr>
+    <td><input type="file" name="img"><br>
+    <img src="{{ data.photo }}" height="80px" width="80px"> </td>
+    <td></td>
+</tr>
+
+    <tr>
+        <td>Name</td>
+        <td><input type="text" value="{{ data.name }}" name="a1" > </td>
+    </tr>
+    <tr>
+        <td>Gender</td>
+        <td><input type="radio" {% if data.gender  == "male" %}checked{% endif %} name="gender" value="male">male
+            <input type="radio" {% if data.gender == "female" %}checked{% endif %} name="gender" value="female">female</td>
+    </tr>
+     <tr>
+        <td>Place</td>
+        <td><input type="text" value="{{ data.place }}" name="a2"></td>
+    </tr>
+     <tr>
+        <td>Post</td>
+        <td><input type="text" value="{{ data.post}}" name="a3"></td>
+    </tr>
+     <tr>
+        <td>Pin</td>
+        <td><input type="text" value="{{ data.pin }}" name="a4"></td>
+    </tr>
+     <tr>
+        <td>District</td>
+        <td><input type="text" value="{{ data.district }}" name="a5"></td>
+    </tr>
+     <tr>
+        <td>State</td>
+        <td><input type="text" value="{{ data.state }}" name="a6"></td>
+    </tr>
+     <tr>
+        <td>Department</td>
+        <td><select name="dropdown">
+            {% for i in data1 %}
+            <option value="{{ i.id }}" {% if data.DEPARTMENT.id == i.id  %}selected{% endif %}>{{ i.name }}</option>
+            {% endfor %}
+        </select></td>
+    </tr>
+     <tr>
+        <td>Qualification</td>
+        <td><input type="text" value="{{ data.qualification }}" name="a8"></td>
+    </tr>
+
+    <tr>
+        <td><input type="submit"></td>
+    </tr>
+</table>
+</form>
+{% endblock %}

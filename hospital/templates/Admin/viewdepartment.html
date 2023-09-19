@@ -1,0 +1,22 @@
+{% extends 'Admin/adminindex.html' %}
+{% block body %}
+
+<h2>View Department</h2>
+<table border="3" class="table table-bordered table-hover">
+    <tr>
+        <td>sl/no</td>
+        <td>departments</td>
+
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ i.name }}</td>
+        <td> <a href="/hospitalapp/editdep/{{ i.id }}" class="btn btn-success" >edit</a></td>
+        <td><a href="/hospitalapp/deletedepartment/{{ i.id }}" onclick="return confirm('Are You Sure..');" class="btn btn-danger" >Delete</a> </td>
+
+    </tr>
+    {% endfor %}
+
+</table>
+{% endblock %}

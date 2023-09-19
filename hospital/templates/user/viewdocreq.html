@@ -1,0 +1,26 @@
+{% extends 'user/userindex.html' %}
+{% block body %}
+<h2>View doctors</h2>
+<table border="1" class="table table-light">
+    <tr>
+        <td>sl/no</td>
+        <td>name</td>
+        <td>department</td>
+        <td>gender</td>
+        <td>qualification</td>
+        <td>photo</td>
+        <td>send request </td>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ i.name }}</td>
+        <td>{{ i.DEPARTMENT.name }}</td>
+        <td>{{ i.gender }}</td>
+        <td>{{ i.qualification }}</td>
+        <td> <img src="{{ i.photo }}" width="50px" height="50px"></td>
+        <td><a href="/hospitalapp/sendreq/{{ i.id }}">request</a> </td>
+    </tr>
+     {% endfor %}
+</table>
+{% endblock %}
